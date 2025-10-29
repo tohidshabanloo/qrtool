@@ -63,7 +63,7 @@ export default function Home() {
       <header className="w-full border-b border-gray-200/70 dark:border-white/10">
         <div className="mx-auto max-w-3xl px-4 py-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-400 shadow-soft" />
+            <img src="/logo.png" alt="QRTool" className="h-14 w-14 rounded-xl object-contain shadow-soft" />
             <div>
               <h1 className="text-xl font-extrabold tracking-tight">QRTool</h1>
               <p className="text-xs text-gray-500 dark:text-gray-400">ساخت فوری کد QR رایگان</p>
@@ -109,6 +109,7 @@ export default function Home() {
                 </button>
               </div>
               <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">با Enter هم تولید میشود</p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">بارکدهای ایجاد شده دائمی است و تحت هیچ شرایطی منقضی نمی‌شود.</p>
             </div>
 
             <div className={`rounded-2xl border border-gray-200 dark:border-white/10 p-4 md:p-6 shadow-soft bg-white dark:bg-gray-900 ${hasQr ? 'fade-in' : ''}`}>
@@ -125,57 +126,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-3xl px-4 pb-14">
-          <div className="rounded-2xl border border-gray-200 dark:border-white/10 p-6 bg-white dark:bg-gray-900">
-            <h3 className="text-lg font-semibold mb-4">نحوه کار</h3>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <Step icon={<IconInput />} title="ورود متن یا لینک" desc="هر متنی یا URL معتبر" />
-              <Step icon={<IconBolt />} title="کلیک روی تولید" desc="تولید آنی QR" />
-              <Step icon={<IconDownload />} title="دانلود QR" desc="ذخیره به صورت PNG" />
-            </div>
-          </div>
-        </section>
+        
       </main>
 
       <footer className="w-full border-t border-gray-200/70 dark:border-white/10">
         <div className="mx-auto max-w-3xl px-4 py-6 text-center text-sm text-gray-600 dark:text-gray-400">
-          © 2025 QRTool — ساخته شده با ❤️ توسط Tohid
+          ساخته شده با ❤️ توسط 
           {" "}
-          <a className="underline decoration-dotted hover:decoration-solid" href="https://www.youtube.com" target="_blank" rel="noreferrer">YouTube</a>
+          <a className=" hover:decoration-solid" href="https://www.koolegard.com" target="_blank" rel="noreferrer">توحید شعبانلو</a>
+          
         </div>
       </footer>
     </div>
   )
 }
-
-function Step({ icon, title, desc }) {
-  return (
-    <div className="flex flex-col items-center text-center gap-2">
-      <div className="h-10 w-10 rounded-xl grid place-items-center bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-500/20">
-        {icon}
-      </div>
-      <div className="font-medium">{title}</div>
-      <div className="text-xs text-gray-500 dark:text-gray-400">{desc}</div>
-    </div>
-  )
-}
-
-function IconInput() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4 5h16v2H4zM4 11h10v2H4zM4 17h16v2H4z"/></svg>
-  )
-}
-
-function IconBolt() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11 21h-1l1-7H7l6-11h1l-1 7h4l-6 11z"/></svg>
-  )
-}
-
-function IconDownload() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M5 20h14v-2H5v2zm7-18l-5 6h3v6h4v-6h3l-5-6z"/></svg>
-  )
-}
-
-
