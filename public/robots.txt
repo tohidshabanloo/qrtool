@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://qrtool.example
+
+# Sitemaps
+Sitemap: https://qrtool.example/sitemap.xml
