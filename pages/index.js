@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { NextSeo, WebPageJsonLd } from 'next-seo'
+import Head from 'next/head'
 import QRCode from 'qrcode'
 
 export default function Home() {
@@ -61,19 +61,96 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col items-center">
-      <NextSeo
-        title="سازنده کد QR رایگان"
-        description="متن یا لینک را وارد کنید و کد QR را فوری دریافت کنید. رایگان، سریع و فارسی."
-        openGraph={{
-          title: 'سازنده کد QR رایگان',
-          description: 'متن یا لینک را وارد کنید و کد QR را فوری دریافت کنید. رایگان، سریع و فارسی.',
-        }}
-      />
-      <WebPageJsonLd
-        description="ابزار ساخت سریع کد QR برای متن و لینک با رابط کاربری فارسی"
-        id={(process.env.NEXT_PUBLIC_SITE_URL || 'https://qrtool.example') + '/'}
-        lastReviewed={new Date().toISOString()}
-      />
+      <Head>
+        <title>سازنده فوری کد QR | QRTool</title>
+        <meta name="description" content="متن یا لینک را وارد کنید، QR آماده دریافت کنید. ساخت فوری کد QR رایگان." />
+        <link rel="canonical" href="https://qrtool.ir/" />
+        <meta property="og:url" content="https://qrtool.ir/" />
+        <meta property="og:title" content="QRTool — سازنده فوری کد QR" />
+        <meta property="og:description" content="متن یا لینک را وارد کنید، QR آماده دریافت کنید. ساخت فوری کد QR رایگان." />
+        <meta property="og:image" content="https://qrtool.ir/logo.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebPage',
+              '@id': 'https://qrtool.ir/#webpage',
+              url: 'https://qrtool.ir/',
+              inLanguage: 'fa-IR',
+              description: 'QRTool — ساخت فوری کد QR رایگان',
+              isPartOf: { '@id': 'https://qrtool.ir/#website' },
+              lastReviewed: new Date().toISOString(),
+              reviewedBy: { '@type': 'Organization', name: 'QRTool' },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              '@id': 'https://qrtool.ir/#organization',
+              name: 'QRTool',
+              url: 'https://qrtool.ir/',
+              logo: 'https://qrtool.ir/logo.png',
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'چطور با QRTool کد QR بسازم؟',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text:
+                      'متن یا لینک خود را در کادر وارد کنید و روی دکمه «تولید» بزنید. تصویر QR بلافاصله نمایش داده می‌شود و می‌توانید آن را به صورت PNG دانلود کنید.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'آیا کدهای QR ساخته‌شده منقضی می‌شوند؟',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'خیر. بارکدهای ایجاد شده دائمی هستند و تحت هیچ شرایطی منقضی نمی‌شوند.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'آیا استفاده از QRTool رایگان است؟',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'بله، ساخت کد QR در QRTool کاملاً رایگان است.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'چطور تم تاریک یا روشن را تغییر دهم؟',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'با کلیک روی دکمه «تغییر تم» در بالای صفحه می‌توانید بین حالت تاریک و روشن جابه‌جا شوید. انتخاب شما برای دفعات بعد نیز ذخیره می‌شود.',
+                  },
+                },
+                {
+                  '@type': 'Question',
+                  name: 'چطور تصویر QR را دانلود کنم؟',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'پس از تولید QR روی دکمه «دانلود PNG» کلیک کنید تا فایل تصویر با فرمت PNG ذخیره شود.',
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+      </Head>
       <header className="w-full border-b border-gray-200/70 dark:border-white/10">
         <div className="mx-auto max-w-3xl px-4 py-6 flex items-center justify-between">
           <div className="flex items-center gap-2">

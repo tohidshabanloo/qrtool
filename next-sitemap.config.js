@@ -1,21 +1,24 @@
 /** @type {import('next-sitemap').IConfig} */
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://qrtool.ir';
-
-module.exports = {
-  siteUrl: SITE_URL,
+const config = {
+  siteUrl: 'https://qrtool.ir',
   generateRobotsTxt: true,
-  exclude: [],
-  robotsTxtOptions: {
-    policies: [
-      { userAgent: '*', allow: '/' },
-    ],
-    additionalSitemaps: [
-      `${SITE_URL}/sitemap.xml`,
-    ],
-  },
+  sitemapSize: 7000,
   changefreq: 'weekly',
   priority: 0.7,
-  sitemapSize: 5000,
-};
+  exclude: [],
+  transform: async (config, path) => {
+    return {
+      loc: path,
+      changefreq: 'weekly',
+      priority: path === '/' ? 1.0 : 0.7,
+      lastmod: new Date().toISOString(),
+      alternateRefs: [
+        { href: 'https://qrtool.ir', hreflang: 'fa' },
+      ],
+    }
+  },
+}
 
+module.exports = config;
 
+ 

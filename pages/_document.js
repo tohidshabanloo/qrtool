@@ -4,20 +4,12 @@ export default function Document() {
   return (
     <Html lang="fa" dir="rtl">
       <Head>
-        <meta name="description" content="QRTool - ساخت فوری کد QR رایگان" />
+        {/* Titles and meta managed via next-seo in _app.js */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta property="og:title" content="QRTool - سازنده فوری QR" />
-        <meta property="og:description" content="متن یا لینک را وارد کنید، QR آماده دریافت کنید." />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="fa_IR" />
-        <meta property="og:site_name" content="QRTool" />
-        <meta name="robots" content="index,follow" />
-        <meta name="googlebot" content="index,follow" />
-        <meta name="format-detection" content="telephone=no" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <body>
         <Main />

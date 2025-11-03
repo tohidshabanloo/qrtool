@@ -1,0 +1,22 @@
+{
+  "name": "QRTool — سازنده فوری کد QR",
+  "short_name": "QRTool",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "description": "QRTool — ساخت فوری کد QR رایگان. متن یا لینک را وارد کنید و فوری دریافت کنید.",
+  "lang": "fa-IR",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
+
