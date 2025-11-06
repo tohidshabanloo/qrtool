@@ -3,7 +3,7 @@ import Head from 'next/head'
 import QRCode from 'qrcode'
 
 export default function Home() {
-  const [text, setText] = useState('https://qrtool.example')
+  const [text, setText] = useState('qrtool.ir')
   const [isDark, setIsDark] = useState(false)
   const [hasQr, setHasQr] = useState(false)
   const canvasRef = useRef(null)
@@ -199,7 +199,7 @@ export default function Home() {
                   تولید
                 </button>
               </div>
-              <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">با Enter هم تولید میشود</p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">با Enter هم تولید میشود</p>
               <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">بارکدهای ایجاد شده دائمی است و تحت هیچ شرایطی منقضی نمی‌شود.</p>
             </div>
 
