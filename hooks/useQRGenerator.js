@@ -22,7 +22,8 @@ export function useQRGenerator() {
   useEffect(() => {
     const saved = typeof window !== 'undefined' ? localStorage.getItem('qrtool-theme') : null
     const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-    const initialDark = saved === 'dark' || (!saved && prefersDark)
+    // Default to dark mode if no saved preference
+    const initialDark = saved === 'light' ? false : (saved === 'dark' || !saved || prefersDark)
     setIsDark(initialDark)
     if (initialDark) document.documentElement.classList.add('dark')
   }, [])

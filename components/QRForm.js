@@ -80,17 +80,17 @@ export default function QRForm({
     <div className="space-y-6">
       {/* QR Type Selection */}
       <div className="rounded-2xl border border-gray-200 dark:border-white/10 p-4 md:p-6 shadow-soft bg-white dark:bg-gray-900">
-        <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
           {qrTypes.map((type) => (
             <button
               key={type.value}
               onClick={() => setQrType(type.value)}
-              className={`px-3 py-3 rounded-lg text-xs sm:text-sm border transition flex flex-col items-center gap-1 ${qrType === type.value
+              className={`px-3 py-2 rounded-lg text-xs sm:text-sm border transition flex items-center gap-2 justify-center ${qrType === type.value
                 ? 'bg-indigo-600 text-white border-indigo-600'
                 : 'border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300'
                 }`}
             >
-              <span className="text-lg">{type.icon}</span>
+              <span className="text-base">{type.icon}</span>
               <span>{type.label}</span>
             </button>
           ))}

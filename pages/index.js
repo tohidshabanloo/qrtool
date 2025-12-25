@@ -119,7 +119,7 @@ export default function Home() {
 
       <main className="w-full flex-1 overflow-hidden">
         <section className="mx-auto max-w-7xl px-4 py-6 h-full">
-          <div className="grid lg:grid-cols-2 gap-6 items-start h-full">
+          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-6 items-start h-full">
             <div className="order-last lg:order-first overflow-y-auto max-h-[calc(100vh-120px)] pr-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700 scrollbar-track-transparent">
               <QRForm
                 qrType={qrType}
