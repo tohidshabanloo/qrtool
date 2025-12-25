@@ -117,26 +117,30 @@ export default function Home() {
 
       <Header isDark={isDark} setIsDark={setIsDark} />
 
-      <main className="w-full flex-1">
-        <section className="mx-auto max-w-5xl px-4 py-6">
-          <div className="grid sm:grid-cols-2 gap-6 items-stretch">
-            <QRForm
-              qrType={qrType}
-              setQrType={setQrType}
-              text={text}
-              setText={setText}
-              designOptions={designOptions}
-              setDesignOptions={setDesignOptions}
-              onGenerate={generate}
-              onKeyDown={onKeyDown}
-              isDark={isDark}
-            />
-            <QRDisplay
-              canvasRef={canvasRef}
-              hasQr={hasQr}
-              isGenerating={isGenerating}
-              downloadPng={downloadPng}
-            />
+      <main className="w-full flex-1 overflow-hidden">
+        <section className="mx-auto max-w-7xl px-4 py-6 h-full">
+          <div className="grid lg:grid-cols-2 gap-6 items-start h-full">
+            <div className="order-last lg:order-first overflow-y-auto max-h-[calc(100vh-120px)] pr-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700 scrollbar-track-transparent">
+              <QRForm
+                qrType={qrType}
+                setQrType={setQrType}
+                text={text}
+                setText={setText}
+                designOptions={designOptions}
+                setDesignOptions={setDesignOptions}
+                onGenerate={generate}
+                onKeyDown={onKeyDown}
+                isDark={isDark}
+              />
+            </div>
+            <div className="order-first lg:order-last lg:sticky lg:top-6">
+              <QRDisplay
+                canvasRef={canvasRef}
+                hasQr={hasQr}
+                isGenerating={isGenerating}
+                downloadPng={downloadPng}
+              />
+            </div>
           </div>
         </section>
       </main>

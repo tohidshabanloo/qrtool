@@ -3,6 +3,15 @@ import { useRef } from 'react'
 export default function QRDisplay({ canvasRef, hasQr, isGenerating, downloadPng }) {
   return (
     <div className={`rounded-2xl border border-gray-200 dark:border-white/10 p-4 md:p-6 shadow-soft bg-white dark:bg-gray-900 ${hasQr ? 'fade-in' : ''}`}>
+      <button
+        onClick={downloadPng}
+        className="w-full mb-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 transition flex items-center justify-center gap-2 font-medium"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        دانلود کد QR
+      </button>
       <div className="aspect-square w-full rounded-xl grid place-items-center bg-gray-50 dark:bg-gray-950 border border-gray-200/70 dark:border-white/10 relative">
         <canvas ref={canvasRef} className="!w-[280px] !h-[280px]" />
         {isGenerating && (
@@ -17,12 +26,6 @@ export default function QRDisplay({ canvasRef, hasQr, isGenerating, downloadPng 
           </div>
         )}
       </div>
-      <button
-        onClick={downloadPng}
-        className="mt-4 w-full rounded-xl border border-gray-300 dark:border-white/10 px-4 py-3 hover:bg-gray-50 dark:hover:bg-white/5 transition"
-      >
-        دانلود PNG
-      </button>
     </div>
   )
 }

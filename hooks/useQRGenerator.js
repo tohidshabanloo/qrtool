@@ -29,18 +29,19 @@ export function useQRGenerator() {
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDark)
-    try { localStorage.setItem('qrtool-theme', isDark ? 'dark' : 'light') } catch {}
+    try { localStorage.setItem('qrtool-theme', isDark ? 'dark' : 'light') } catch { }
   }, [isDark])
 
-  const generate = async (value) => {
+  const generate = async (value, customDesignOptions = null) => {
     const canvas = canvasRef.current
     if (!canvas) return
 
     setIsGenerating(true)
 
-    // Use design options or fallback to theme colors
-    const fg = designOptions.fgColor || (isDark ? '#e5e7eb' : '#111827')
-    const bg = designOptions.bgColor || (isDark ? '#0b1220' : '#ffffff')
+    // Use custom design options if provided, otherwise use state
+    const options = customDesignOptions || designOptions
+    const fg = options.fgColor || (isDark ? '#e5e7eb' : '#111827')
+    const bg = options.bgColor || (isDark ? '#0b1220' : '#ffffff')
 
     try {
       await QRCode.toCanvas(canvas, value || text || ' ', {
@@ -54,11 +55,11 @@ export function useQRGenerator() {
       const size = canvas.width
 
       // Apply shape mask first
-      if (designOptions.shape !== 'square') {
+      if (options.shape !== 'square') {
         ctx.save()
         ctx.globalCompositeOperation = 'destination-in'
 
-        if (designOptions.shape === 'rounded') {
+        if (options.shape === 'rounded') {
           const radius = size * 0.1
           ctx.beginPath()
           ctx.moveTo(radius, 0)
@@ -72,7 +73,7 @@ export function useQRGenerator() {
           ctx.quadraticCurveTo(0, 0, radius, 0)
           ctx.closePath()
           ctx.fill()
-        } else if (designOptions.shape === 'circle') {
+        } else if (options.shape === 'circle') {
           ctx.beginPath()
           ctx.arc(size / 2, size / 2, size / 2, 0, 2 * Math.PI)
           ctx.fill()
@@ -81,32 +82,32 @@ export function useQRGenerator() {
       }
 
       // Apply frame after shape mask
-      if (designOptions.frame !== 'none') {
+      if (options.frame !== 'none') {
         ctx.save()
         ctx.strokeStyle = fg
 
         // Set line width based on frame type
         let lineWidth = 4
-        if (designOptions.frame === 'thick') lineWidth = 8
-        else if (designOptions.frame === 'double') lineWidth = 4
+        if (options.frame === 'thick') lineWidth = 8
+        else if (options.frame === 'double') lineWidth = 4
         ctx.lineWidth = lineWidth
 
         // Set dash for dotted
-        if (designOptions.frame === 'dotted') {
+        if (options.frame === 'dotted') {
           ctx.setLineDash([5, 5])
         } else {
           ctx.setLineDash([])
         }
 
         // Draw frame based on shape
-        if (designOptions.shape === 'square') {
-          if (designOptions.frame === 'double') {
+        if (options.shape === 'square') {
+          if (options.frame === 'double') {
             ctx.strokeRect(2, 2, size - 4, size - 4)
             ctx.strokeRect(6, 6, size - 12, size - 12)
           } else {
             ctx.strokeRect(0, 0, size, size)
           }
-        } else if (designOptions.shape === 'rounded') {
+        } else if (options.shape === 'rounded') {
           const radius = size * 0.1
           ctx.beginPath()
           ctx.moveTo(radius, 0)
@@ -119,7 +120,7 @@ export function useQRGenerator() {
           ctx.lineTo(0, radius)
           ctx.quadraticCurveTo(0, 0, radius, 0)
           ctx.closePath()
-          if (designOptions.frame === 'double') {
+          if (options.frame === 'double') {
             ctx.stroke()
             ctx.beginPath()
             ctx.moveTo(radius + 4, 4)
@@ -136,10 +137,10 @@ export function useQRGenerator() {
           } else {
             ctx.stroke()
           }
-        } else if (designOptions.shape === 'circle') {
+        } else if (options.shape === 'circle') {
           ctx.beginPath()
           ctx.arc(size / 2, size / 2, size / 2 - lineWidth / 2, 0, 2 * Math.PI)
-          if (designOptions.frame === 'double') {
+          if (options.frame === 'double') {
             ctx.stroke()
             ctx.beginPath()
             ctx.arc(size / 2, size / 2, size / 2 - lineWidth - 4, 0, 2 * Math.PI)
@@ -152,7 +153,7 @@ export function useQRGenerator() {
       }
 
       // Add logo
-      if (designOptions.logo) {
+      if (options.logo) {
         await new Promise((resolve) => {
           const logoImg = new Image()
           logoImg.onload = () => {
@@ -166,7 +167,7 @@ export function useQRGenerator() {
             ctx.restore()
             resolve()
           }
-          logoImg.src = designOptions.logo
+          logoImg.src = options.logo
         })
       }
 
