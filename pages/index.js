@@ -134,14 +134,40 @@ export default function Home() {
       <Header isDark={isDark} setIsDark={setIsDark} />
 
       <main className="w-full flex-1 overflow-hidden">
-        <section className="mx-auto max-w-7xl px-4 py-12 border-t border-gray-200 dark:border-white/10 mt-12">
-          <div className="max-w-4xl mx-auto">
+        <section className="mx-auto max-w-7xl px-4 py-6">
+          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-6 items-start">
+            <div className="order-last lg:order-first overflow-y-auto max-h-[calc(100vh-120px)] pr-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700 scrollbar-track-transparent">
+              <QRForm
+                qrType={qrType}
+                setQrType={setQrType}
+                text={text}
+                setText={setText}
+                designOptions={designOptions}
+                setDesignOptions={setDesignOptions}
+                onGenerate={generate}
+                onKeyDown={onKeyDown}
+                isDark={isDark}
+              />
+            </div>
+            <div className="order-first lg:order-last lg:sticky lg:top-6">
+              <QRDisplay
+                canvasRef={canvasRef}
+                hasQr={hasQr}
+                isGenerating={isGenerating}
+                downloadPng={downloadPng}
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-4 py-12 border-t border-gray-200 dark:border-white/10 mt-12 mb-12">
+          <div className="max-w-4xl mx-auto text-right" dir="rtl">
             <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-8 border-r-4 border-indigo-600 pr-4">
               آموزش ساخت qrcode با استفاده از سازنده qr code رایگان QRTool
             </h2>
 
             <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-400 leading-relaxed">
-              <p className="mb-6">
+              <p className="mb-6 text-lg">
                 آیا به دنبال یک <strong>سازنده qr code</strong> حرفه‌ای و سریع هستید؟ <strong>QRTool</strong> به عنوان یک <strong>qrcode builder</strong> پیشرفته، به شما این امکان را می‌دهد تا انواع کدهای QR را برای مصارف مختلف به صورت کاملاً رایگان تولید کنید.
               </p>
 
