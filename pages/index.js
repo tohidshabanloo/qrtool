@@ -160,44 +160,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 py-12 border-t border-gray-200 dark:border-white/10 mt-12 mb-12">
-          <div className="max-w-4xl mx-auto text-right" dir="rtl">
-            <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-8 border-r-4 border-indigo-600 pr-4">
-              آموزش ساخت qrcode با استفاده از سازنده qr code رایگان QRTool
-            </h2>
-
-            <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-400 leading-relaxed">
-              <p className="mb-6 text-lg">
-                آیا به دنبال یک <strong>سازنده qr code</strong> حرفه‌ای و سریع هستید؟ <strong>QRTool</strong> به عنوان یک <strong>qrcode builder</strong> پیشرفته، به شما این امکان را می‌دهد تا انواع کدهای QR را برای مصارف مختلف به صورت کاملاً رایگان تولید کنید.
-              </p>
-
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-10 mb-4">مراحل ساخت qrcode در چند ثانیه:</h3>
-              <ol className="list-decimal list-inside space-y-3 mb-8">
-                <li><strong>انتخاب نوع کد:</strong> از منوی بالا، نوع محتوای خود (لینک، متن، وای‌فای، واتس‌اپ و ...) را انتخاب کنید.</li>
-                <li><strong>ورود اطلاعات:</strong> اطلاعات مورد نظر خود را در کادر مربوطه وارد نمایید.</li>
-                <li><strong>شخصی‌سازی (اختیاری):</strong> با استفاده از بخش طراحی، رنگ‌ها، شکل بدنه و لوگوی اختصاصی خود را اضافه کنید.</li>
-                <li><strong>تولید و دانلود:</strong> روی دکمه «تولید» کلیک کرده و سپس فایل PNG را دریافت کنید.</li>
-              </ol>
-
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-10 mb-4">چرا QRTool بهترین qrcode generator است؟</h3>
-              <p className="mb-6">
-                ما با ارائه ابزاری ساده اما قدرتمند، تلاش می‌کنیم تا بهترین تجربه <strong>ساخت qrcode</strong> را برای کاربران ایرانی فراهم کنیم. برخی از ویژگی‌های برتر این ابزار عبارتند از:
-              </p>
-              <ul className="list-disc list-inside space-y-2 mb-8">
-                <li>پشتیبانی کامل از زبان فارسی و متون یونیکد</li>
-                <li>قابلیت شخصی‌سازی رنگ و لوگو بدون هزینه اضافی</li>
-                <li>بدون نیاز به ثبت‌نام و کاملاً ناشناس</li>
-                <li>سازگاری کامل با تمامی گوشی‌های هوشمند (اندروید و آیفون)</li>
-              </ul>
-
-              <div className="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-2xl border border-indigo-100 dark:border-indigo-800 mt-12">
-                <p className="text-indigo-700 dark:text-indigo-300 font-medium text-sm m-0">
-                  نکته سئو: برای نتایج بهتر در گوگل، همیشه از کدهای QR با کنتراست رنگی بالا استفاده کنید تا توسط دوربین‌ها سریع‌تر اسکن شوند.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
