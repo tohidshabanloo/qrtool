@@ -24,7 +24,7 @@ export default function Home() {
   } = useQRGenerator()
 
   return (
-    <div className="min-h-screen flex flex-col items-center overflow-x-hidden">
+    <div className="h-screen flex flex-col items-center overflow-x-hidden overflow-y-hidden">
       <Head>
         <title>سازنده کد QR | ساخت qrcode رایگان و سریع | QRTool</title>
         <meta name="description" content="بهترین سازنده qr code رایگان برای ساخت qrcode لینک، وای‌فای، واتس‌اپ و کارت ویزیت. با qrcode builder اختصاصی ما، بارکد دو بعدی خود را شخصی‌سازی کنید." />
@@ -136,25 +136,32 @@ export default function Home() {
 
       <Header isDark={isDark} setIsDark={setIsDark} />
 
-      <main className="w-full flex-1 overflow-hidden">
-        <section className="mx-auto max-w-[1400px] px-3 sm:px-4 py-3 md:py-4">
-          <div className="grid lg:grid-cols-[2.3fr_1fr] xl:grid-cols-[2.5fr_1fr] gap-3 md:gap-4 lg:gap-6 items-start">
-            {/* Left: Form and Design Area - More Space */}
-            <div className="order-last lg:order-first min-w-0 overflow-visible">
-              <QRForm
-                qrType={qrType}
-                setQrType={setQrType}
-                text={text}
-                setText={setText}
-                designOptions={designOptions}
-                setDesignOptions={setDesignOptions}
-                onGenerate={generate}
-                onKeyDown={onKeyDown}
-                isDark={isDark}
-              />
+      <main className="w-full flex-1 overflow-hidden relative">
+        {/* Professional Background */}
+        <div className="absolute inset-0 bg-gray-50 dark:bg-gray-950 -z-10" />
+        
+        <section className="h-full mx-auto max-w-7xl px-4 py-4 md:py-6">
+          {/* Main Content - Horizontal Layout */}
+          <div className="h-full grid lg:grid-cols-[1.8fr_1fr] gap-4 md:gap-6 items-start">
+            {/* Left: Form Section */}
+            <div className="h-full overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700 scrollbar-track-transparent">
+              <div className="bg-white dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 shadow-sm p-5 md:p-6">
+                <QRForm
+                  qrType={qrType}
+                  setQrType={setQrType}
+                  text={text}
+                  setText={setText}
+                  designOptions={designOptions}
+                  setDesignOptions={setDesignOptions}
+                  onGenerate={generate}
+                  onKeyDown={onKeyDown}
+                  isDark={isDark}
+                />
+              </div>
             </div>
-            {/* Right: QR Code Preview - Less Space */}
-            <div className="order-first lg:order-last lg:sticky lg:top-3">
+
+            {/* Right: QR Code Preview - Sticky */}
+            <div className="lg:sticky lg:top-4 h-fit">
               <QRDisplay
                 canvasRef={canvasRef}
                 hasQr={hasQr}
