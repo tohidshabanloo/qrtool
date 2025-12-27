@@ -24,7 +24,7 @@ export default function Home() {
   } = useQRGenerator()
 
   return (
-    <div className="min-h-screen flex flex-col items-center">
+    <div className="min-h-screen flex flex-col items-center overflow-x-hidden">
       <Head>
         <title>سازنده کد QR | ساخت qrcode رایگان و سریع | QRTool</title>
         <meta name="description" content="بهترین سازنده qr code رایگان برای ساخت qrcode لینک، وای‌فای، واتس‌اپ و کارت ویزیت. با qrcode builder اختصاصی ما، بارکد دو بعدی خود را شخصی‌سازی کنید." />
@@ -137,9 +137,10 @@ export default function Home() {
       <Header isDark={isDark} setIsDark={setIsDark} />
 
       <main className="w-full flex-1 overflow-hidden">
-        <section className="mx-auto max-w-7xl px-4 py-6">
-          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-6 items-start">
-            <div className="order-last lg:order-first overflow-y-auto max-h-[calc(100vh-120px)] pr-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700 scrollbar-track-transparent">
+        <section className="mx-auto max-w-[1400px] px-3 sm:px-4 py-3 md:py-4">
+          <div className="grid lg:grid-cols-[2.3fr_1fr] xl:grid-cols-[2.5fr_1fr] gap-3 md:gap-4 lg:gap-6 items-start">
+            {/* Left: Form and Design Area - More Space */}
+            <div className="order-last lg:order-first min-w-0 overflow-visible">
               <QRForm
                 qrType={qrType}
                 setQrType={setQrType}
@@ -152,7 +153,8 @@ export default function Home() {
                 isDark={isDark}
               />
             </div>
-            <div className="order-first lg:order-last lg:sticky lg:top-6">
+            {/* Right: QR Code Preview - Less Space */}
+            <div className="order-first lg:order-last lg:sticky lg:top-3">
               <QRDisplay
                 canvasRef={canvasRef}
                 hasQr={hasQr}

@@ -77,38 +77,38 @@ export default function QRForm({
   }
 
   return (
-    <div className="space-y-6">
-      {/* QR Type Selection */}
-      <div className="rounded-2xl border border-gray-200 dark:border-white/10 p-4 md:p-6 shadow-soft bg-white dark:bg-gray-900">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
+    <div className="space-y-4 md:space-y-5">
+      {/* QR Type Selection - Moved to top as Step 0 */}
+      <div className="rounded-2xl border border-gray-200 dark:border-white/10 p-4 md:p-5 shadow-soft bg-white dark:bg-gray-900">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-2">
           {qrTypes.map((type) => (
             <button
               key={type.value}
               onClick={() => setQrType(type.value)}
-              className={`px-3 py-2 rounded-lg text-xs sm:text-sm border transition flex items-center gap-2 justify-center ${qrType === type.value
-                ? 'bg-indigo-600 text-white border-indigo-600'
-                : 'border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300'
+              className={`px-2.5 py-2.5 rounded-xl text-xs sm:text-sm border transition-all flex flex-col items-center gap-1.5 justify-center min-h-[70px] ${qrType === type.value
+                ? 'bg-indigo-600 text-white border-indigo-600 shadow-md scale-105'
+                : 'border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-600'
                 }`}
             >
-              <span className="text-base">{type.icon}</span>
-              <span>{type.label}</span>
+              <span className="text-lg sm:text-xl">{type.icon}</span>
+              <span className="font-medium">{type.label}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Section 1: Complete the content */}
-      <div className="rounded-2xl border border-gray-200 dark:border-white/10 p-4 md:p-6 shadow-soft bg-white dark:bg-gray-900">
+      <div className="rounded-2xl border border-gray-200 dark:border-white/10 p-4 md:p-5 shadow-soft bg-white dark:bg-gray-900">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-700 text-white flex items-center justify-center font-bold text-base shadow-md">
             1
           </div>
-          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200">تکمیل محتوا</h2>
+          <h2 className="text-lg md:text-xl font-bold text-gray-800 dark:text-gray-200">تکمیل محتوا</h2>
         </div>
 
         {qrType === 'text' && (
           <div>
-            <label htmlFor="text-input" className="block text-sm mb-2 text-gray-600 dark:text-gray-400">متن خود را وارد کنید</label>
+            <label htmlFor="text-input" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">متن خود را وارد کنید</label>
             <div className="flex gap-2">
               <input
                 id="text-input"
@@ -118,11 +118,11 @@ export default function QRForm({
                 onChange={(e) => setText(e.target.value)}
                 onKeyDown={onKeyDown}
                 placeholder="هر متنی"
-                className="flex-1 rounded-xl border border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 px-3 py-3 outline-none focus:ring-2 focus:ring-indigo-400"
+                className="flex-1 rounded-xl border-2 border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 px-4 py-2.5 outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
               />
               <button
                 onClick={() => onGenerate(text)}
-                className="shrink-0 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 transition"
+                className="shrink-0 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 transition font-semibold shadow-md hover:shadow-lg active:scale-95"
               >
                 تولید
               </button>
@@ -132,7 +132,7 @@ export default function QRForm({
 
         {qrType === 'link' && (
           <div>
-            <label htmlFor="link-input" className="block text-sm mb-2 text-gray-600 dark:text-gray-400">آدرس وب‌سایت خود را وارد کنید</label>
+            <label htmlFor="link-input" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">آدرس وب‌سایت خود را وارد کنید</label>
             <div className="flex gap-2">
               <input
                 id="link-input"
@@ -142,11 +142,11 @@ export default function QRForm({
                 onChange={(e) => setUrlData({ ...urlData, url: e.target.value })}
                 onKeyDown={onKeyDown}
                 placeholder="https://example.com"
-                className="flex-1 rounded-xl border border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 px-3 py-3 outline-none focus:ring-2 focus:ring-indigo-400"
+                className="flex-1 rounded-xl border-2 border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 px-4 py-2.5 outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
               />
               <button
                 onClick={() => onGenerate(urlData.url)}
-                className="shrink-0 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 transition"
+                className="shrink-0 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 transition font-semibold shadow-md hover:shadow-lg active:scale-95"
               >
                 تولید
               </button>
@@ -518,39 +518,39 @@ export default function QRForm({
       </div>
 
       {/* Section 2: Design your QR Code */}
-      <div className="rounded-2xl border border-gray-200 dark:border-white/10 p-4 md:p-6 shadow-soft bg-white dark:bg-gray-900">
+      <div className="rounded-2xl border border-gray-200 dark:border-white/10 p-4 md:p-5 shadow-soft bg-white dark:bg-gray-900">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-700 text-white flex items-center justify-center font-bold text-base shadow-md">
             2
           </div>
-          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200">طراحی کد QR</h2>
+          <h2 className="text-lg md:text-xl font-bold text-gray-800 dark:text-gray-200">طراحی کد QR</h2>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-4 border-b border-gray-200 dark:border-white/10">
+        <div className="flex gap-2 mb-4 bg-gray-100 dark:bg-gray-800 p-1 rounded-xl">
           <button
             onClick={() => setActiveDesignTab('frame')}
-            className={`px-4 py-2 text-sm font-medium transition border-b-2 ${activeDesignTab === 'frame'
-              ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400'
-              : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
+            className={`flex-1 px-4 py-2.5 text-sm font-semibold transition-all rounded-lg ${activeDesignTab === 'frame'
+              ? 'bg-white dark:bg-gray-900 text-indigo-600 dark:text-indigo-400 shadow-sm'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
               }`}
           >
             فریم
           </button>
           <button
             onClick={() => setActiveDesignTab('shape')}
-            className={`px-4 py-2 text-sm font-medium transition border-b-2 ${activeDesignTab === 'shape'
-              ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400'
-              : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
+            className={`flex-1 px-4 py-2.5 text-sm font-semibold transition-all rounded-lg ${activeDesignTab === 'shape'
+              ? 'bg-white dark:bg-gray-900 text-indigo-600 dark:text-indigo-400 shadow-sm'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
               }`}
           >
             شکل
           </button>
           <button
             onClick={() => setActiveDesignTab('logo')}
-            className={`px-4 py-2 text-sm font-medium transition border-b-2 ${activeDesignTab === 'logo'
-              ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400'
-              : 'border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
+            className={`flex-1 px-4 py-2.5 text-sm font-semibold transition-all rounded-lg ${activeDesignTab === 'logo'
+              ? 'bg-white dark:bg-gray-900 text-indigo-600 dark:text-indigo-400 shadow-sm'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
               }`}
           >
             لوگو
@@ -560,58 +560,82 @@ export default function QRForm({
         {/* Tab Content */}
         <div className="space-y-4">
           {activeDesignTab === 'frame' && (
-            <div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">
-                {frameOptions.map((frame) => (
-                  <button
-                    key={frame.value}
-                    onClick={() => handleDesignChange({ ...designOptions, frame: frame.value })}
-                    className={`px-3 py-2 rounded-lg text-sm border transition ${designOptions.frame === frame.value
-                      ? 'bg-indigo-600 text-white border-indigo-600'
-                      : 'border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300'
-                      }`}
-                  >
-                    {frame.label}
-                  </button>
-                ))}
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">نوع فریم</label>
+                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700 scrollbar-track-transparent">
+                  {frameOptions.map((frame) => (
+                    <button
+                      key={frame.value}
+                      onClick={() => handleDesignChange({ ...designOptions, frame: frame.value })}
+                      className={`px-4 py-2.5 rounded-xl text-sm font-medium border-2 transition-all whitespace-nowrap flex-shrink-0 ${designOptions.frame === frame.value
+                        ? 'bg-indigo-600 text-white border-indigo-600 shadow-md'
+                        : 'border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300 hover:border-indigo-300'
+                        }`}
+                    >
+                      {frame.label}
+                    </button>
+                  ))}
+                </div>
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs mb-1 text-gray-500 dark:text-gray-400">رنگ پیش‌زمینه</label>
-                  <input
-                    type="color"
-                    value={designOptions.fgColor || (isDark ? '#e5e7eb' : '#111827')}
-                    onChange={(e) => handleDesignChange({ ...designOptions, fgColor: e.target.value })}
-                    className="w-full h-10 rounded border border-gray-300 dark:border-white/10 cursor-pointer"
-                  />
+                  <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">رنگ پیش‌زمینه</label>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="color"
+                      value={designOptions.fgColor || (isDark ? '#e5e7eb' : '#111827')}
+                      onChange={(e) => handleDesignChange({ ...designOptions, fgColor: e.target.value })}
+                      className="w-12 h-12 rounded-lg border-2 border-gray-300 dark:border-white/10 cursor-pointer"
+                    />
+                    <input
+                      type="text"
+                      value={designOptions.fgColor || (isDark ? '#e5e7eb' : '#111827')}
+                      onChange={(e) => handleDesignChange({ ...designOptions, fgColor: e.target.value })}
+                      className="flex-1 rounded-lg border border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-400"
+                      placeholder="#000000"
+                    />
+                  </div>
                 </div>
                 <div>
-                  <label className="block text-xs mb-1 text-gray-500 dark:text-gray-400">رنگ پس‌زمینه</label>
-                  <input
-                    type="color"
-                    value={designOptions.bgColor || (isDark ? '#0b1220' : '#ffffff')}
-                    onChange={(e) => handleDesignChange({ ...designOptions, bgColor: e.target.value })}
-                    className="w-full h-10 rounded border border-gray-300 dark:border-white/10 cursor-pointer"
-                  />
+                  <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">رنگ پس‌زمینه</label>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="color"
+                      value={designOptions.bgColor || (isDark ? '#0b1220' : '#ffffff')}
+                      onChange={(e) => handleDesignChange({ ...designOptions, bgColor: e.target.value })}
+                      className="w-12 h-12 rounded-lg border-2 border-gray-300 dark:border-white/10 cursor-pointer"
+                    />
+                    <input
+                      type="text"
+                      value={designOptions.bgColor || (isDark ? '#0b1220' : '#ffffff')}
+                      onChange={(e) => handleDesignChange({ ...designOptions, bgColor: e.target.value })}
+                      className="flex-1 rounded-lg border border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-400"
+                      placeholder="#ffffff"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           )}
 
           {activeDesignTab === 'shape' && (
-            <div className="grid grid-cols-3 gap-2">
-              {shapeOptions.map((shape) => (
-                <button
-                  key={shape.value}
-                  onClick={() => handleDesignChange({ ...designOptions, shape: shape.value })}
-                  className={`px-3 py-2 rounded-lg text-sm border transition ${designOptions.shape === shape.value
-                    ? 'bg-indigo-600 text-white border-indigo-600'
-                    : 'border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300'
-                    }`}
-                >
-                  {shape.label}
-                </button>
-              ))}
+            <div>
+              <label className="block text-sm font-medium mb-3 text-gray-700 dark:text-gray-300">شکل نقاط</label>
+              <div className="grid grid-cols-3 gap-3">
+                {shapeOptions.map((shape) => (
+                  <button
+                    key={shape.value}
+                    onClick={() => handleDesignChange({ ...designOptions, shape: shape.value })}
+                    className={`px-4 py-3 rounded-xl text-sm font-medium border-2 transition-all ${designOptions.shape === shape.value
+                      ? 'bg-indigo-600 text-white border-indigo-600 shadow-md'
+                      : 'border-gray-300 dark:border-white/10 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-white/5 text-gray-700 dark:text-gray-300 hover:border-indigo-300'
+                      }`}
+                  >
+                    {shape.label}
+                  </button>
+                ))}
+              </div>
             </div>
           )}
 
@@ -665,7 +689,7 @@ export default function QRForm({
         </div>
       </div>
 
-      <p className="text-xs text-gray-500 dark:text-gray-500 text-center">با Enter هم تولید می‌شود • بارکدهای ایجاد شده دائمی است</p>
+      <p className="text-xs text-gray-500 dark:text-gray-500 text-center pt-2">با Enter هم تولید می‌شود • بارکدهای ایجاد شده دائمی است</p>
     </div>
   )
 }
