@@ -57,17 +57,36 @@ export default function BlogPost() {
     return (
         <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950 transition-colors" dir="rtl">
             <Head>
-                <title>{post.title} | QRTool</title>
+                <title>{post.title} | QRTool - سازنده qrcode رایگان</title>
                 <meta name="description" content={post.excerpt} />
-                <meta name="keywords" content={post.keywords} />
-                <link rel="canonical" href={`https://qrtool.ir/blog/${post.slug}`} />
+                <meta name="keywords" content={`${post.keywords}, qrcode, کد QR, سازنده qr code, ساخت qrcode, بارکد دو بعدی, کیو آر کد, qrcode generator, ساخت کیو آر کد رایگان`} />
+                <link rel="canonical" href={`https://www.qrtool.ir/blog/${post.slug}`} />
+                <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+                <meta httpEquiv="content-language" content="fa" />
+                <meta name="language" content="Persian" />
+                <meta name="geo.region" content="IR" />
+                <meta name="geo.placename" content="Iran" />
+                <meta name="article:published_time" content={post.date} />
+                <meta name="article:author" content={post.author} />
+                <meta name="article:section" content="آموزش qrcode" />
 
                 {/* Open Graph */}
-                <meta property="og:title" content={post.title} />
+                <meta property="og:title" content={`${post.title} | QRTool`} />
                 <meta property="og:description" content={post.excerpt} />
-                <meta property="og:image" content={post.thumbnail} />
-                <meta property="og:url" content={`https://qrtool.ir/blog/${post.slug}`} />
+                <meta property="og:image" content={`https://www.qrtool.ir${post.thumbnail}`} />
+                <meta property="og:url" content={`https://www.qrtool.ir/blog/${post.slug}`} />
                 <meta property="og:type" content="article" />
+                <meta property="og:locale" content="fa_IR" />
+                <meta property="og:site_name" content="QRTool - سازنده کد QR" />
+                <meta property="article:published_time" content={post.date} />
+                <meta property="article:author" content={post.author} />
+                <meta property="article:section" content="آموزش qrcode" />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={post.title} />
+                <meta name="twitter:description" content={post.excerpt} />
+                <meta name="twitter:image" content={`https://www.qrtool.ir${post.thumbnail}`} />
 
                 {/* Article Schema */}
                 <script
@@ -77,12 +96,61 @@ export default function BlogPost() {
                             "@context": "https://schema.org",
                             "@type": "Article",
                             "headline": post.title,
-                            "image": post.thumbnail,
+                            "description": post.excerpt,
+                            "image": `https://www.qrtool.ir${post.thumbnail}`,
                             "datePublished": post.date,
+                            "dateModified": post.date,
                             "author": {
                                 "@type": "Organization",
-                                "name": "QRTool"
-                            }
+                                "name": post.author,
+                                "url": "https://www.qrtool.ir"
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "QRTool",
+                                "url": "https://www.qrtool.ir",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://www.qrtool.ir/logo.png"
+                                }
+                            },
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": `https://www.qrtool.ir/blog/${post.slug}`
+                            },
+                            "inLanguage": "fa-IR",
+                            "keywords": post.keywords
+                        })
+                    }}
+                />
+                
+                {/* Breadcrumb Schema */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "خانه",
+                                    "item": "https://www.qrtool.ir"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "وبلاگ",
+                                    "item": "https://www.qrtool.ir/blog"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": post.title,
+                                    "item": `https://www.qrtool.ir/blog/${post.slug}`
+                                }
+                            ]
                         })
                     }}
                 />
@@ -125,8 +193,10 @@ export default function BlogPost() {
                         <div className="aspect-[21/9] rounded-3xl overflow-hidden mb-12 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-white/5">
                             <img
                                 src={post.thumbnail}
-                                alt={post.title}
+                                alt={`تصویر اصلی مقاله ${post.title} - QRTool`}
+                                title={post.title}
                                 className="w-full h-full object-cover"
+                                loading="eager"
                                 onError={(e) => {
                                     e.target.src = '/blog/thumbnails/blog_thumbnail_what_is_qr.png'
                                 }}
@@ -150,8 +220,10 @@ export default function BlogPost() {
                                 <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-white/5">
                                     <img
                                         src={related.thumbnail}
-                                        alt={related.title}
+                                        alt={`مقاله مرتبط: ${related.title}`}
+                                        title={related.title}
                                         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                        loading="lazy"
                                         onError={(e) => {
                                             e.target.src = '/blog/thumbnails/blog_thumbnail_what_is_qr.png'
                                         }}

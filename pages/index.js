@@ -29,11 +29,14 @@ export default function Home() {
         <title>سازنده کد QR | ساخت qrcode رایگان و سریع | QRTool</title>
         <meta name="description" content="بهترین سازنده qr code رایگان برای ساخت qrcode لینک، وای‌فای، واتس‌اپ و کارت ویزیت. با qrcode builder اختصاصی ما، بارکد دو بعدی خود را شخصی‌سازی کنید." />
         <meta name="keywords" content="ساخت qrcode, سازنده qr code, qrcode builder, qrcode generator, ساخت بارکد رایگان, کیو آر کد سریع" />
-        <link rel="canonical" href="https://qrtool.ir/" />
-        <meta property="og:url" content="https://qrtool.ir/" />
+        <link rel="canonical" href="https://www.qrtool.ir/" />
+        <link rel="alternate" hreflang="fa-IR" href="https://www.qrtool.ir/" />
+        <link rel="alternate" hreflang="fa" href="https://www.qrtool.ir/" />
+        <link rel="alternate" hreflang="x-default" href="https://www.qrtool.ir/" />
+        <meta property="og:url" content="https://www.qrtool.ir/" />
         <meta property="og:title" content="QRTool — ساخت فوری و رایگان qrcode" />
         <meta property="og:description" content="با استفاده از سازنده qr code ما، در کمتر از چند ثانیه qrcode خود را بسازید و شخصی‌سازی کنید." />
-        <meta property="og:image" content="https://qrtool.ir/logo.png" />
+        <meta property="og:image" content="https://www.qrtool.ir/logo.png" />
         <meta property="og:type" content="website" />
 
         {/* SoftwareApplication Schema */}
@@ -66,11 +69,11 @@ export default function Home() {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebPage',
-              '@id': 'https://qrtool.ir/#webpage',
-              url: 'https://qrtool.ir/',
+              '@id': 'https://www.qrtool.ir/#webpage',
+              url: 'https://www.qrtool.ir/',
               inLanguage: 'fa-IR',
               description: 'بهترین سازنده qr code و qrcode builder فارسی رایگان',
-              isPartOf: { '@id': 'https://qrtool.ir/#website' },
+              isPartOf: { '@id': 'https://www.qrtool.ir/#website' },
               lastReviewed: new Date().toISOString(),
               reviewedBy: { '@type': 'Organization', name: 'QRTool' },
             }),
@@ -82,10 +85,10 @@ export default function Home() {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              '@id': 'https://qrtool.ir/#organization',
+              '@id': 'https://www.qrtool.ir/#organization',
               name: 'QRTool',
-              url: 'https://qrtool.ir/logo.png',
-              logo: 'https://qrtool.ir/logo.png',
+              url: 'https://www.qrtool.ir/logo.png',
+              logo: 'https://www.qrtool.ir/logo.png',
               sameAs: [
                 'https://www.instagram.com/qrtool.ir',
                 'https://twitter.com/qrtool_ir'

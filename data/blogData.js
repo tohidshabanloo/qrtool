@@ -7,7 +7,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۵ دقیقه',
         thumbnail: '/blog/thumbnails/what-is-qr-code.png',
-        keywords: 'کد QR چیست, نحوه کار کد QR, تاریخچه QR code, کاربرد کد QR',
+        keywords: 'qrcode چیست, کد QR چیست, نحوه کار کد QR, تاریخچه QR code, کاربرد کد QR, سازنده qr code, ساخت qrcode, بارکد دو بعدی, کیو آر کد',
         content: `
       <h2>کد QR چیست؟</h2>
       <p>کد پاسخ سریع یا Quick Response Code که به اختصار QR Code نامیده می‌شود، نوعی بارکد دو بعدی است که می‌تواند حجم زیادی از اطلاعات را در خود ذخیره کند. بر خلاف بارکدهای معمولی خطی که فقط اعداد را ذخیره می‌کنند، کدهای QR می‌توانند شامل متن، لینک وب‌سایت، شماره تماس، ایمیل و داده‌های دیگر باشند.</p>
@@ -38,7 +38,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۶ دقیقه',
         thumbnail: '/blog/thumbnails/history-of-qr-code.png',
-        keywords: 'تاریخچه QR code, مخترع کد QR, دن سو ویو, تکامل بارکد',
+        keywords: 'تاریخچه qrcode, تاریخچه QR code, مخترع کد QR, دن سو ویو, تکامل بارکد, تاریخچه کیو آر کد, qrcode history',
         content: `
       <h2>آغاز ماجرا: نیاز به سرعت بیشتر</h2>
       <p>در اوایل دهه ۱۹۹۰، با گسترش تنوع محصولات در صنعت خودروسازی ژاپن، بارکدهای معمولی دیگر پاسخگوی نیازها نبودند. کارگران مجبور بودند چندین بارکد را روی یک جعبه اسکن کنند که کاری زمان‌بر و خسته‌کننده بود.</p>
@@ -64,7 +64,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۵ دقیقه',
         thumbnail: '/blog/thumbnails/qr-code-types.png',
-        keywords: 'انواع QR code, کد QR استاتیک, کد QR داینامیک, تفاوت استاتیک و داینامیک',
+        keywords: 'انواع qrcode, انواع QR code, کد QR استاتیک, کد QR داینامیک, تفاوت استاتیک و داینامیک, انواع کیو آر کد, qrcode types',
         content: `
       <h2>دسته‌بندی اصلی: استاتیک و داینامیک</h2>
       <p>کدهای QR به دو دسته اصلی تقسیم می‌شوند که هر کدام کاربرد خاص خود را دارند.</p>
@@ -103,7 +103,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۵ دقیقه',
         thumbnail: '/blog/thumbnails/qr-marketing.png',
-        keywords: 'بازاریابی با QR code, تبلیغات با کیو آر کد, کاربرد تجاری QR, جذب مشتری',
+        keywords: 'بازاریابی با qrcode, بازاریابی با QR code, تبلیغات با کیو آر کد, کاربرد تجاری QR, جذب مشتری, qrcode marketing, استفاده از کد QR در کسب‌وکار',
         content: `
       <h2>پل ارتباطی دنیای فیزیکی و دیجیتال</h2>
       <p>کدهای QR یکی از بهترین ابزارها برای اتصال تبلیغات چاپی (آفلاین) به دنیای دیجیتال (آنلاین) هستند. یک پوستر ساده روی دیوار می‌تواند مشتری را مستقیماً به صفحه خرید محصول ببرد.</p>
@@ -138,7 +138,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۴ دقیقه',
         thumbnail: '/blog/thumbnails/create-qr.png',
-        keywords: 'ساخت کد QR, آموزش ساخت بارکد, نرم افزار ساخت QR, ساخت کیو آر کد رایگان',
+        keywords: 'ساخت qrcode, ساخت کد QR, آموزش ساخت بارکد, نرم افزار ساخت QR, ساخت کیو آر کد رایگان, qrcode generator, سازنده qr code, آموزش ساخت qrcode, ساخت بارکد دو بعدی',
         content: `
       <h2>چرا از ابزارهای آنلاین استفاده کنیم؟</h2>
       <p>برای ساخت کد QR نیازی به نرم‌افزارهای پیچیده یا دانش برنامه‌نویسی ندارید. ابزارهای آنلاین مانند QRTool این کار را در چند ثانیه برای شما انجام می‌دهند.</p>
@@ -170,7 +170,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۶ دقیقه',
         thumbnail: '/blog/thumbnails/qr-security.png',
-        keywords: 'امنیت QR code, هک با بارکد, فیشینگ با QR, خطرات اسکن کردن',
+        keywords: 'امنیت qrcode, امنیت QR code, هک با بارکد, فیشینگ با QR, خطرات اسکن کردن, امنیت کد QR, qrcode security, نکات امنیتی کد QR',
         content: `
       <h2>آیا کدهای QR ویروسی هستند؟</h2>
       <p>خود تصویر کد QR نمی‌تواند ویروس داشته باشد، اما لینکی که درون آن قرار دارد می‌تواند شما را به یک سایت مخرب هدایت کند. این روش حمله به "Quishing" (فیشینگ با QR) معروف است.</p>
@@ -200,7 +200,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۵ دقیقه',
         thumbnail: '/blog/thumbnails/what-is-qr-code.png',
-        keywords: 'ایده های خلاقانه QR, کاربرد جالب بارکد, کیو آر کد هنری',
+        keywords: 'ایده های خلاقانه qrcode, ایده های خلاقانه QR, کاربرد جالب بارکد, کیو آر کد هنری, کاربردهای خلاقانه کد QR, qrcode creative uses',
         content: `
       <h2>۱. کارت پستال‌های صوتی</h2>
       <p>یک کد QR روی کارت پستال چاپ کنید که با اسکن آن، صدای ضبط شده شما برای گیرنده پخش شود.</p>
@@ -232,7 +232,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۴ دقیقه',
         thumbnail: '/blog/thumbnails/qr-code-types.png',
-        keywords: 'تفاوت بارکد و QR, بارکد یا کیو آر, مقایسه بارکدها',
+        keywords: 'تفاوت بارکد و qrcode, تفاوت بارکد و QR, بارکد یا کیو آر, مقایسه بارکدها, qrcode vs barcode, تفاوت بارکد یک بعدی و دو بعدی',
         content: `
       <h2>ساختار و ظاهر</h2>
       <ul>
@@ -258,7 +258,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۵ دقیقه',
         thumbnail: '/blog/thumbnails/history-of-qr-code.png',
-        keywords: 'آینده تکنولوژی QR, واقعیت افزوده و QR, شهرهای هوشمند',
+        keywords: 'آینده qrcode, آینده تکنولوژی QR, واقعیت افزوده و QR, شهرهای هوشمند, future of qrcode, آینده کد QR',
         content: `
       <h2>کدهای QR و واقعیت افزوده (AR)</h2>
       <p>ترکیب QR با AR تجربه کاربری را دگرگون می‌کند. تصور کنید با اسکن کد روی جعبه یک محصول، مدل سه بعدی آن را روی میز خود ببینید.</p>
@@ -281,7 +281,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۴ دقیقه',
         thumbnail: '/blog/thumbnails/create-qr.png',
-        keywords: 'طراحی QR code, رنگ کد QR, لوگو در بارکد, اصول طراحی کیو آر',
+        keywords: 'طراحی qrcode, طراحی QR code, رنگ کد QR, لوگو در بارکد, اصول طراحی کیو آر, qrcode design, شخصی‌سازی کد QR, طراحی حرفه‌ای کد QR',
         content: `
       <h2>۱. اهمیت "ناحیه سکوت" (Quiet Zone)</h2>
       <p>همیشه باید یک حاشیه خالی دور کد QR وجود داشته باشد تا اسکنر بتواند مرز کد را تشخیص دهد. هرگز طراحی پس‌زمینه را به ماژول‌های کد نچسبانید.</p>
@@ -307,7 +307,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۵ دقیقه',
         thumbnail: '/blog/thumbnails/qr-marketing.png',
-        keywords: 'منوی دیجیتال, منوی رستوران با QR, سفارش آنلاین غذا, مزایای منوی آنلاین',
+        keywords: 'منوی دیجیتال, منوی رستوران با qrcode, منوی رستوران با QR, سفارش آنلاین غذا, مزایای منوی آنلاین, qrcode menu, منوی QR, منوی رستوران هوشمند',
         content: `
       <h2>خداحافظی با منوهای کاغذی</h2>
       <p>منوهای کاغذی هزینه چاپ دارند، کثیف می‌شوند و تغییر قیمت در آنها دشوار است. منوی دیجیتال تمام این مشکلات را حل می‌کند.</p>
@@ -335,7 +335,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۵ دقیقه',
         thumbnail: '/blog/thumbnails/what-is-qr-code.png',
-        keywords: 'کد QR در مدرسه, آموزش هوشمند, کلاس درس تعاملی, تکنولوژی آموزشی',
+        keywords: 'qrcode در آموزش, کد QR در مدرسه, آموزش هوشمند, کلاس درس تعاملی, تکنولوژی آموزشی, استفاده از qrcode در مدرسه, کاربرد کد QR در آموزش',
         content: `
       <h2>۱. کتاب‌های درسی زنده</h2>
       <p>چاپ کدهای QR در کنار درس‌ها که دانش‌آموزان را به ویدیوهای آزمایشگاهی، صوت تلفظ کلمات زبان یا نقشه‌های تعاملی هدایت می‌کند.</p>
@@ -358,7 +358,7 @@ export const blogPosts = [
         author: 'تیم QRTool',
         readTime: '۴ دقیقه',
         thumbnail: '/blog/thumbnails/blog_thumbnail_create_free.png',
-        keywords: 'آموزش ساخت qrcode, سازنده qr code, qrcode builder, نحوه تولید کیو آر کد',
+        keywords: 'آموزش ساخت qrcode, سازنده qr code, qrcode builder, نحوه تولید کیو آر کد, ساخت qrcode رایگان, آموزش کامل ساخت کد QR, qrcode generator فارسی, سازنده کد QR ایرانی',
         content: `
       <h2>چگونه یک کد QR بسازیم؟</h2>
       <p>آیا به دنبال یک <strong>سازنده qr code</strong> حرفه‌ای و سریع هستید؟ <strong>QRTool</strong> به عنوان یک <strong>qrcode builder</strong> پیشرفته، به شما این امکان را می‌دهد تا انواع کدهای QR را برای مصارف مختلف به صورت کاملاً رایگان تولید کنید.</p>
