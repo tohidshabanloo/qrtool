@@ -9,6 +9,7 @@ const config = {
   siteUrl: siteUrl,
   generateRobotsTxt: true,
   sitemapSize: 7000,
+  generateIndexSitemap: false,
   changefreq: 'weekly',
   priority: 0.7,
   exclude: [],
@@ -24,10 +25,11 @@ const config = {
       { userAgent: 'GPTBot', disallow: '/' },
       { userAgent: 'meta-externalagent', disallow: '/' },
     ],
+    additionalSitemaps: [],
   },
   additionalPaths: async (config) => {
     const result = []
-    
+
     // Add blog index page
     result.push({
       loc: '/blog',
@@ -35,7 +37,7 @@ const config = {
       priority: 0.8,
       lastmod: new Date().toISOString(),
     })
-    
+
     // Add all blog post pages
     blogPosts.forEach((post) => {
       result.push({
@@ -45,7 +47,7 @@ const config = {
         lastmod: new Date(post.date).toISOString(),
       })
     })
-    
+
     return result
   },
   transform: async (config, path) => {
@@ -65,4 +67,4 @@ const config = {
 
 module.exports = config;
 
- 
+
