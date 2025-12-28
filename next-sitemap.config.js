@@ -1,8 +1,12 @@
 const { blogPosts } = require('./data/blogSitemapData')
 
+// Use SITE_URL env variable if set, otherwise use production URL
+// For local development, set SITE_URL=http://localhost:3000 before building
+const siteUrl = process.env.SITE_URL || 'https://www.qrtool.ir'
+
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: 'https://www.qrtool.ir',
+  siteUrl: siteUrl,
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: 'weekly',
@@ -20,7 +24,6 @@ const config = {
       { userAgent: 'GPTBot', disallow: '/' },
       { userAgent: 'meta-externalagent', disallow: '/' },
     ],
-    additionalSitemaps: ['https://www.qrtool.ir/sitemap.xml'],
   },
   additionalPaths: async (config) => {
     const result = []
@@ -52,9 +55,9 @@ const config = {
       priority: path === '/' ? 1.0 : path.startsWith('/blog') ? 0.8 : 0.7,
       lastmod: new Date().toISOString(),
       alternateRefs: [
-        { href: 'https://www.qrtool.ir', hreflang: 'fa-IR' },
-        { href: 'https://www.qrtool.ir', hreflang: 'fa' },
-        { href: 'https://www.qrtool.ir', hreflang: 'x-default' },
+        { href: siteUrl, hreflang: 'fa-IR' },
+        { href: siteUrl, hreflang: 'fa' },
+        { href: siteUrl, hreflang: 'x-default' },
       ],
     }
   },

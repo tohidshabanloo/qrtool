@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next-sitemap",
+    "build:dev": "powershell -Command \"$env:SITE_URL='http://localhost:3000'; npm run build\"",
     "start": "next start",
     "lint": "echo 'No lint configured'"
   },
