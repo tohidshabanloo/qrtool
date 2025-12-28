@@ -1,3 +1,5 @@
+const { blogPosts } = require('./data/blogData')
+
 /** @type {import('next-sitemap').IConfig} */
 const config = {
   siteUrl: 'https://www.qrtool.ir',
@@ -19,6 +21,29 @@ const config = {
       { userAgent: 'meta-externalagent', disallow: '/' },
     ],
     additionalSitemaps: ['https://www.qrtool.ir/sitemap.xml'],
+  },
+  additionalPaths: async (config) => {
+    const result = []
+    
+    // Add blog index page
+    result.push({
+      loc: '/blog',
+      changefreq: 'weekly',
+      priority: 0.8,
+      lastmod: new Date().toISOString(),
+    })
+    
+    // Add all blog post pages
+    blogPosts.forEach((post) => {
+      result.push({
+        loc: `/blog/${post.slug}`,
+        changefreq: 'monthly',
+        priority: 0.8,
+        lastmod: new Date(post.date).toISOString(),
+      })
+    })
+    
+    return result
   },
   transform: async (config, path) => {
     return {

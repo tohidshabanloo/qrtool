@@ -388,3 +388,8 @@ export const blogPosts = [
     `
     }
 ]
+
+// CommonJS export for compatibility with next-sitemap.config.js
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { blogPosts }
+}
