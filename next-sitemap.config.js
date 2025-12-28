@@ -1,3 +1,5 @@
+const { blogPosts } = require('./data/blogSitemapData')
+
 /** @type {import('next-sitemap').IConfig} */
 const config = {
   siteUrl: 'https://www.qrtool.ir',
@@ -21,8 +23,6 @@ const config = {
     additionalSitemaps: ['https://www.qrtool.ir/sitemap.xml'],
   },
   additionalPaths: async (config) => {
-    // Use dynamic import to load ES6 module
-    const { blogPosts } = await import('./data/blogData.js')
     const result = []
     
     // Add blog index page
