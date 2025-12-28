@@ -1,4 +1,41 @@
+# *
 User-agent: *
 Allow: /
 
+# Amazonbot
+User-agent: Amazonbot
+Disallow: /
+
+# Applebot-Extended
+User-agent: Applebot-Extended
+Disallow: /
+
+# Bytespider
+User-agent: Bytespider
+Disallow: /
+
+# CCBot
+User-agent: CCBot
+Disallow: /
+
+# ClaudeBot
+User-agent: ClaudeBot
+Disallow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Disallow: /
+
+# GPTBot
+User-agent: GPTBot
+Disallow: /
+
+# meta-externalagent
+User-agent: meta-externalagent
+Disallow: /
+
+# Host
+Host: https://www.qrtool.ir
+
+# Sitemaps
 Sitemap: https://www.qrtool.ir/sitemap.xml
